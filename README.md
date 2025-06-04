@@ -8,12 +8,19 @@
 
 ## Installation
 
-Pour lancer ce projet, clonez le repo
+Pour lancer ce projet, clonez le repo et installez python3 
+### Python installation
+
+| OS | Commande | 
+|:------:|:------------------------:|
+| MAC      | brew install python  |      
+| linux    | sudo apt install python3 python3-pip  |      
+| Windows      | https://www.python.org/downloads/        |  
+
 Déplacez vous dans le dossier du repo 
 
-Si vous souhaitez un environnement python run :```python3 -m venv 
+Pour créez un environnement python run :```python3 -m venv 
 Nom_De_l'environnement``` 
-
 Pour activer l'environnement faites : 
 
 ```source Nom_De_l'environnement/bin/activate ```
