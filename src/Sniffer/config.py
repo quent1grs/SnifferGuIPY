@@ -11,4 +11,4 @@ RegisteredIpCount = 0
 
 Iplist = set()
 RegisteredIpErrors = []
-filename = f"logs/ips_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+filename = f"logs/IP/ips_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
