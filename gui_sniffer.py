@@ -1,11 +1,12 @@
 import scapy.all as scapy
 import threading
 import tkinter as tk
-import os
 from tkinter import scrolledtext, ttk
 from Sniffer import config
 from Sniffer.logger import log_ip
 from Sniffer.protocol import get_protocol_name
+
+import os
 from datetime import datetime
 
 LOG_DIR = "logs"
@@ -15,6 +16,7 @@ os.makedirs(CAPTURE_LOG_DIR, exist_ok=True)
 
 GLOBAL_LOG_FILE = os.path.join(LOG_DIR, "logs.txt")
 
+# Au lancement d'une nouvelle capture, on crée un fichier avec timestamp
 def get_new_capture_log_file():
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"capture_{timestamp}.txt"
@@ -28,12 +30,15 @@ class PacketSnifferApp:
 
         self.logged_ips = set()
 
+        # === Layout principal ===
         self.main_frame = tk.Frame(master)
         self.main_frame.pack(fill="both", expand=True)
 
+        # === Cadre gauche pour les contrôles et stats ===
         self.left_frame = tk.Frame(self.main_frame)
         self.left_frame.grid(row=0, column=0, sticky="n", padx=10, pady=10)
 
+        # === Statistiques ===
         self.stats_frame = tk.LabelFrame(self.left_frame, text="Statistiques", padx=10, pady=10)
         self.stats_frame.grid(row=0, column=0, sticky="nw", pady=5)
 
@@ -51,6 +56,7 @@ class PacketSnifferApp:
         for i, label in enumerate(self.stats_labels.values()):
             label.grid(row=i, column=0, sticky="w")
 
+        # === Cadre interface & boutons ===
         self.controls_frame = tk.Frame(self.left_frame)
         self.controls_frame.grid(row=1, column=0, pady=20)
 
@@ -77,16 +83,18 @@ class PacketSnifferApp:
         self.stop_button = tk.Button(self.controls_frame, text="Arrêter", command=self.stop_sniffer, state=tk.DISABLED)
         self.stop_button.grid(row=6, column=0, pady=5, sticky="we")
 
+        # === Zone de texte à droite ===
         self.output_text = scrolledtext.ScrolledText(self.main_frame, wrap=tk.WORD, width=100, height=40, state=tk.DISABLED)
         self.output_text.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
 
+        # === Configuration de l'expansion ===
         self.main_frame.columnconfigure(1, weight=1)
         self.main_frame.rowconfigure(0, weight=1)
 
+        # === Timer stats ===
         self.stop_flag = threading.Event()
         self.update_stats()
-        self.current_capture_file = None      
-    
+
     def update_stats(self):
         self.stats_labels["TCP"].config(text=f"TCP : {config.TCPcount}")
         self.stats_labels["UDP"].config(text=f"UDP : {config.UDPcount}")
@@ -121,12 +129,6 @@ class PacketSnifferApp:
         self.reset_stats()
         self.logged_ips.clear()
         self.stop_flag.clear()
-        self.toggle_buttons(True)
-        threading.Thread(target=self.capture_limited, args=(interface, int(count)), daemon=True).start()
-        self.current_capture_file = get_new_capture_log_file()
-        
-        with open(self.current_capture_file, "w", encoding="utf-8") as f:
-            f.write(f"--- Nouvelle capture limitée : {datetime.now()} ---\n")
         self.toggle_buttons(True)
         threading.Thread(target=self.capture_limited, args=(interface, int(count)), daemon=True).start()
 
@@ -166,11 +168,12 @@ class PacketSnifferApp:
         self.output_text.insert(tk.END, message)
         self.output_text.see(tk.END)
         self.output_text.config(state=tk.DISABLED)
-        if self.current_capture_file:
-            with open(self.current_capture_file, "a", encoding="utf-8") as f:
-                f.write(message)
 
-        # Journal global avec timestamp
+        # Enregistrement dans le fichier de sortie (capture "temporaire")
+        with open(OUTPUT_LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(message)
+
+        # Enregistrement dans le fichier de logs global
         timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S] ")
         with open(GLOBAL_LOG_FILE, "a", encoding="utf-8") as f:
             for line in message.strip().split("\n"):
@@ -181,6 +184,9 @@ class PacketSnifferApp:
         self.output_text.delete(1.0, tk.END)
         self.output_text.config(state=tk.DISABLED)
 
+        # Vide aussi le fichier de capture temporaire
+        with open(OUTPUT_LOG_FILE, "w", encoding="utf-8") as f:
+            f.write(f"--- Nouvelle capture : {datetime.now()} ---\n")
 
     def process_packet(self, packet):
         try:
