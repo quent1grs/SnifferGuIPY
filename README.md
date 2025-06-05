@@ -28,7 +28,7 @@ Pour activer l'environnement faites :
 Maintenant vous devez installer les dépendance : ```pip install -r requierement.txt ```
 
 ## Lancement
-
+### sans gui 
 Afin de lancer le projet il vous faudra être en root ou du moins lancer en sudo  car Scapy a besoin des autorisations root pour fonctionner.
 Pour cela deplacer vous a la racine du projet et 
 
@@ -40,11 +40,24 @@ Après avoir utilisé le sniffer, si vous voulez quitter l'environnement faites 
 
 ``` deactivate ```
 
+### avec gui 
+Afin de lancer le projet il vous faudra être en root ou du moins lancer en sudo  car Scapy a besoin des autorisations root pour fonctionner.
+Pour cela deplacer vous a la racine du projet et 
+
+Faites : ``` sudo python3 src/gui_sniffer.py ``` pour lancer le sniffer.
+
+Choisissez l'interface sur laquelle vous voulez écoutez et ensuite choisissez le nombre de paquet a Capturer .
+
+Après avoir utilisé le sniffer, si vous voulez quitter l'environnement faites la commande:
+
+``` deactivate ```
+
+
 
 
 ## Features
 
-Enregistrement des captures : Vous pouvez enregistrer vos captures en .pcap ou .txt.
+Enregistrement des captures : Vous pouvez enregistrer vos captures en .pcap dans logs/capture/ 
 
 Interface utilisateur graphique : Une interface utilisateur graphique est disponible pour une meilleure expérience utilisateur.
 
