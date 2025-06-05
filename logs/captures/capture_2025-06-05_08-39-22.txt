@@ -1,0 +1,117 @@
+--- Nouvelle capture limitée : 2025-06-05 08:39:22.432236 ---
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65097
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65097 > 104.16.103.112:https FA
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65097
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65097 > 104.16.103.112:https FA
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 65097
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:65097 FA
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 65097
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:65097 FA
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65097
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65097 > 104.16.103.112:https A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65097
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65097 > 104.16.103.112:https A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 52.123.200.63
+Port Source : 64506
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64506 > 52.123.200.63:https PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 52.123.200.63
+Port Source : 64506
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64506 > 52.123.200.63:https PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 52.123.200.63
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 64506
+Résumé : Ether / IP / TCP 52.123.200.63:https > 10.70.2.251:64506 PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 52.123.200.63
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 64506
+Résumé : Ether / IP / TCP 52.123.200.63:https > 10.70.2.251:64506 PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 52.123.200.63
+Port Source : 64506
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64506 > 52.123.200.63:https A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 52.123.200.63
+Port Source : 64506
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64506 > 52.123.200.63:https A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 64614
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64614 > 104.16.103.112:https PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 64614
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:64614 > 104.16.103.112:https PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 64614
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:64614 A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 64614
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:64614 A
+----------------------------------------------------------------------
+
+Capture terminée.
+
+Capture terminée.

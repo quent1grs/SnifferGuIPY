@@ -1,0 +1,101 @@
+--- Nouvelle capture limitée : 2025-06-05 09:05:11.216762 ---
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.6.47 says 10.70.6.47 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.211 says 10.70.1.211 / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.7.161
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.7.161 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 162.159.135.234
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 65401
+Résumé : Ether / IP / TCP 162.159.135.234:https > 10.70.2.251:65401 PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 162.159.135.234
+Port Source : 65401
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65401 > 162.159.135.234:https A
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.5.74
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.5.74 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.6.168
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.6.168 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.3.95
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.3.95 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.3.95 says 10.70.3.95 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.0.198 says 10.70.0.198 / Padding
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 54:6c:eb:88:0a:a9
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.0.99
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.0.99 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.3.95 says 10.70.3.95 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.0.198 says 10.70.0.198 / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.0.9
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.0.9 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.7.59
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.7.59 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 65465
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:65465 PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65465
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65465 > 104.16.103.112:https A
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 10.70.2.251
+IP Destination : 104.16.103.112
+Port Source : 65465
+Port Destination : 443
+Résumé : Ether / IP / TCP 10.70.2.251:65465 > 104.16.103.112:https PA / Raw
+----------------------------------------------------------------------
+Protocole : TCP
+IP Source : 104.16.103.112
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 65465
+Résumé : Ether / IP / TCP 104.16.103.112:https > 10.70.2.251:65465 A
+----------------------------------------------------------------------
+
+Capture terminée.

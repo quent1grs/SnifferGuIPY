@@ -86,7 +86,7 @@ class PacketSnifferApp:
         self.stop_flag = threading.Event()
         self.update_stats()
         self.current_capture_file = None      
-    
+
     def update_stats(self):
         self.stats_labels["TCP"].config(text=f"TCP : {config.TCPcount}")
         self.stats_labels["UDP"].config(text=f"UDP : {config.UDPcount}")
@@ -108,7 +108,6 @@ class PacketSnifferApp:
         config.unknowncount = 0
         self.logged_ips.clear()
 
-
     def start_limited_sniffer(self):
         interface = self.interface_combo.get()
         count = self.packet_count_entry.get()
@@ -122,12 +121,11 @@ class PacketSnifferApp:
         self.logged_ips.clear()
         self.stop_flag.clear()
         self.toggle_buttons(True)
-        threading.Thread(target=self.capture_limited, args=(interface, int(count)), daemon=True).start()
+
         self.current_capture_file = get_new_capture_log_file()
-        
         with open(self.current_capture_file, "w", encoding="utf-8") as f:
             f.write(f"--- Nouvelle capture limitée : {datetime.now()} ---\n")
-        self.toggle_buttons(True)
+        
         threading.Thread(target=self.capture_limited, args=(interface, int(count)), daemon=True).start()
 
     def start_unlimited_sniffer(self):
@@ -161,7 +159,6 @@ class PacketSnifferApp:
         self.write_output("\nCapture illimitée arrêtée.\n")
 
     def write_output(self, message):
-        # Affichage dans l'interface
         self.output_text.config(state=tk.NORMAL)
         self.output_text.insert(tk.END, message)
         self.output_text.see(tk.END)
@@ -170,7 +167,6 @@ class PacketSnifferApp:
             with open(self.current_capture_file, "a", encoding="utf-8") as f:
                 f.write(message)
 
-        # Journal global avec timestamp
         timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S] ")
         with open(GLOBAL_LOG_FILE, "a", encoding="utf-8") as f:
             for line in message.strip().split("\n"):
@@ -180,7 +176,6 @@ class PacketSnifferApp:
         self.output_text.config(state=tk.NORMAL)
         self.output_text.delete(1.0, tk.END)
         self.output_text.config(state=tk.DISABLED)
-
 
     def process_packet(self, packet):
         try:
@@ -225,4 +220,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = PacketSnifferApp(root)
     root.mainloop()
-

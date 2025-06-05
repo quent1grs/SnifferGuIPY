@@ -1,0 +1,161 @@
+--- Nouvelle capture limitée : 2025-06-05 09:03:09.097962 ---
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 7c:70:db:91:15:b8
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 7c:70:db:91:15:b8
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address 10:02:b5:cc:f0:92
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.6.88
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.6.88 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.6.88
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.6.88 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.84 says 10.70.1.84 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.84 says 10.70.1.84 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.206 says 10.70.1.206 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.206 says 10.70.1.206 / Padding
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address b4:8c:9d:e8:55:57
+----------------------------------------------------------------------
+Protocole : ICMPv6
+Résumé : Ether / IPv6 / ICMPv6ND_NA / ICMPv6 Neighbor Discovery Option - Destination Link-Layer Address b4:8c:9d:e8:55:57
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.6.146
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.6.146 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.6.146
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.6.146 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.7.205 says 10.70.7.205 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.7.205 says 10.70.7.205 / Padding
+----------------------------------------------------------------------
+Protocole : UDP
+IP Source : 10.70.2.251
+IP Destination : 142.250.201.170
+Port Source : 54267
+Port Destination : 443
+Résumé : Ether / IP / UDP 10.70.2.251:54267 > 142.250.201.170:https / Raw
+----------------------------------------------------------------------
+Protocole : UDP
+IP Source : 10.70.2.251
+IP Destination : 142.250.201.170
+Port Source : 54267
+Port Destination : 443
+Résumé : Ether / IP / UDP 10.70.2.251:54267 > 142.250.201.170:https / Raw
+----------------------------------------------------------------------
+Protocole : UDP
+IP Source : 142.250.201.170
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 54267
+Résumé : Ether / IP / UDP 142.250.201.170:https > 10.70.2.251:54267 / Raw
+----------------------------------------------------------------------
+Protocole : UDP
+IP Source : 142.250.201.170
+IP Destination : 10.70.2.251
+Port Source : 443
+Port Destination : 54267
+Résumé : Ether / IP / UDP 142.250.201.170:https > 10.70.2.251:54267 / Raw
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.0.79
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.0.79 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.0.79
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.0.79 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.4.218 says 10.70.4.218 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.4.218 says 10.70.4.218 / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.2.191
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.2.191 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.2.191
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.2.191 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.206 says 10.70.1.206 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.1.206 says 10.70.1.206 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.7.205 says 10.70.7.205 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.7.205 says 10.70.7.205 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.3.143 says 10.70.3.143 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.3.143 says 10.70.3.143 / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.3.143
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.3.143 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : Unknown
+IP Source : 10.70.3.143
+IP Destination : 224.0.0.251
+Résumé : Ether / 10.70.3.143 > 224.0.0.251 igmp / Raw / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.0.200 says 10.70.0.200 / Padding
+----------------------------------------------------------------------
+Protocole : ARP
+Résumé : Ether / ARP who has 10.70.0.200 says 10.70.0.200 / Padding
+----------------------------------------------------------------------
+
+Capture terminée.
+
+Capture terminée.
