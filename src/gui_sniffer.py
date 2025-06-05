@@ -7,17 +7,16 @@ from Sniffer import config
 from Sniffer.logger import log_ip
 from Sniffer.protocol import get_protocol_name
 from datetime import datetime
+from scapy.utils import wrpcap
 
 LOG_DIR = "logs"
-CAPTURE_LOG_DIR = os.path.join(LOG_DIR, "captures")
+CAPTURE_LOG_DIR = os.path.join(LOG_DIR, "capture")
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(CAPTURE_LOG_DIR, exist_ok=True)
 
-GLOBAL_LOG_FILE = os.path.join(LOG_DIR, "logs.txt")
-
 def get_new_capture_log_file():
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"capture_{timestamp}.txt"
+    filename = f"capture_{timestamp}.pcap"
     return os.path.join(CAPTURE_LOG_DIR, filename)
 
 class PacketSnifferApp:
@@ -54,20 +53,17 @@ class PacketSnifferApp:
         self.controls_frame = tk.Frame(self.left_frame)
         self.controls_frame.grid(row=1, column=0, pady=20)
 
-        # Interface
         self.interface_label = tk.Label(self.controls_frame, text="Interface Réseau :")
         self.interface_label.grid(row=0, column=0, sticky="w")
         self.interface_combo = ttk.Combobox(self.controls_frame, values=scapy.get_if_list())
         self.interface_combo.grid(row=1, column=0, pady=5, sticky="we")
 
-        # Nombre de paquets
         self.packet_count_label = tk.Label(self.controls_frame, text="Nombre de paquets à capturer :")
         self.packet_count_label.grid(row=2, column=0, sticky="w")
         self.packet_count_entry = tk.Entry(self.controls_frame)
         self.packet_count_entry.insert(0, "20")
         self.packet_count_entry.grid(row=3, column=0, pady=5, sticky="we")
 
-        # Boutons
         self.start_button = tk.Button(self.controls_frame, text="Capture Limitée", command=self.start_limited_sniffer)
         self.start_button.grid(row=4, column=0, pady=5, sticky="we")
 
@@ -85,7 +81,8 @@ class PacketSnifferApp:
 
         self.stop_flag = threading.Event()
         self.update_stats()
-        self.current_capture_file = None      
+        self.current_capture_file = None
+        self.captured_packets = []
 
     def update_stats(self):
         self.stats_labels["TCP"].config(text=f"TCP : {config.TCPcount}")
@@ -123,9 +120,8 @@ class PacketSnifferApp:
         self.toggle_buttons(True)
 
         self.current_capture_file = get_new_capture_log_file()
-        with open(self.current_capture_file, "w", encoding="utf-8") as f:
-            f.write(f"--- Nouvelle capture limitée : {datetime.now()} ---\n")
-        
+        self.captured_packets = []
+
         threading.Thread(target=self.capture_limited, args=(interface, int(count)), daemon=True).start()
 
     def start_unlimited_sniffer(self):
@@ -139,6 +135,8 @@ class PacketSnifferApp:
         self.logged_ips.clear()
         self.stop_flag.clear()
         self.toggle_buttons(True)
+        self.current_capture_file = get_new_capture_log_file()
+        self.captured_packets = []
         threading.Thread(target=self.capture_unlimited, args=(interface,), daemon=True).start()
 
     def stop_sniffer(self):
@@ -151,26 +149,39 @@ class PacketSnifferApp:
         self.stop_button.config(state=tk.NORMAL if running else tk.DISABLED)
 
     def capture_limited(self, interface, count):
-        scapy.sniff(iface=interface, prn=self.process_packet, stop_filter=lambda x: self.stop_flag.is_set(), count=count)
-        self.write_output("\nCapture terminée.\n")
+        def packet_callback(packet):
+            self.process_packet(packet)
+            self.captured_packets.append(packet)
+
+        scapy.sniff(
+            iface=interface,
+            prn=packet_callback,
+            stop_filter=lambda x: self.stop_flag.is_set(),
+            count=count
+        )
+
+        wrpcap(self.current_capture_file, self.captured_packets)
+        self.write_output(f"\nCapture terminée. Fichier enregistré : {self.current_capture_file}\n")
 
     def capture_unlimited(self, interface):
-        scapy.sniff(iface=interface, prn=self.process_packet, stop_filter=lambda x: self.stop_flag.is_set())
-        self.write_output("\nCapture illimitée arrêtée.\n")
+        def packet_callback(packet):
+            self.process_packet(packet)
+            self.captured_packets.append(packet)
+
+        scapy.sniff(
+            iface=interface,
+            prn=packet_callback,
+            stop_filter=lambda x: self.stop_flag.is_set()
+        )
+
+        wrpcap(self.current_capture_file, self.captured_packets)
+        self.write_output(f"\nCapture illimitée arrêtée. Fichier enregistré : {self.current_capture_file}\n")
 
     def write_output(self, message):
         self.output_text.config(state=tk.NORMAL)
         self.output_text.insert(tk.END, message)
         self.output_text.see(tk.END)
         self.output_text.config(state=tk.DISABLED)
-        if self.current_capture_file:
-            with open(self.current_capture_file, "a", encoding="utf-8") as f:
-                f.write(message)
-
-        timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S] ")
-        with open(GLOBAL_LOG_FILE, "a", encoding="utf-8") as f:
-            for line in message.strip().split("\n"):
-                f.write(f"{timestamp}{line}\n")
 
     def clear_output(self):
         self.output_text.config(state=tk.NORMAL)
